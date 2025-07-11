@@ -21,9 +21,6 @@ print_error() {
     echo -e "${RED}[ERROR]${NC} $1"
 }
 
-print_status "Installing php dependencies..."
-/bin/bash -c "$(curl -fsSL https://php.new/install/linux/8.4)"
-
 print_status "Installing Composer dependencies..."
 composer install --no-interaction --optimize-autoloader
 
