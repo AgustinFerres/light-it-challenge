@@ -1,0 +1,60 @@
+name: light-it-2
+version: "3.8"
+
+services:
+    app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: laravel-app
+        container_name: laravel-app
+        restart: unless-stopped
+        working_dir: /var/www/html
+        volumes:
+            - ./:/var/www/html
+            - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+        ports:
+            - "8000:80"
+        networks:
+            - laravel
+        depends_on:
+            - db
+        env_file:
+            - .env
+
+    db:
+        image: postgres:15
+        container_name: laravel-postgres
+        restart: unless-stopped
+        ports:
+            - "5432:5432"
+        environment:
+            POSTGRES_DB: ${DB_DATABASE}
+            POSTGRES_USER: ${DB_USERNAME}
+            POSTGRES_PASSWORD: ${DB_PASSWORD}
+        volumes:
+            - dbdata:/var/lib/postgresql/data
+        networks:
+            - laravel
+
+    pgadmin:
+        image: dpage/pgadmin4
+        container_name: laravel-pgadmin
+        restart: unless-stopped
+        ports:
+            - "8080:80"
+        environment:
+            PGADMIN_DEFAULT_EMAIL: admin@admin.com
+            PGADMIN_DEFAULT_PASSWORD: admin
+        depends_on:
+            - db
+        networks:
+            - laravel
+
+networks:
+    laravel:
+        driver: bridge
+
+volumes:
+    dbdata:
+        driver: local
