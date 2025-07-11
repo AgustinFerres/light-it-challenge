@@ -75,7 +75,7 @@ function AddPatientForm(props: Props) {
                         </div>
                     </div>
                     {(errors.phone || errors.prefix) && <p className="text-sm text-red-600">{errors.phone || errors.prefix}</p>}
-                    <Input label="Photo" type="file" onChange={(e) => setData('photo', e.target.files[0])} error={errors.photo} />
+                    <Input label="Photo" type="file" onChange={(e) => setData('photo', e.target.files[0])} error={errors.photo} accept=".jpg"  />
                     <div className="mt-4 flex justify-end gap-2">
                         <Button label="Reset" onClick={handleReset} type="button" />
                         <Button label="Add" type="submit" filled loading={processing} />
