@@ -10,14 +10,14 @@ Make sure you have the following installed:
 
 ## Setup Instructions
 
-1. **Run the setup script:**
-   ```bash
-   ./setup.sh
-   ```
-
-2. **Start the Docker containers:**
+1. **Start the Docker containers:**
    ```bash
    docker-compose up -d
+   ```
+
+2. **Run the setup script:**
+   ```bash
+   ./setup.sh
    ```
 
 3. **Run the development server:**
