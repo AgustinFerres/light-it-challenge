@@ -10,17 +10,22 @@ Make sure you have the following installed:
 
 ## Setup Instructions
 
-1. **Start the Docker containers:**
+1. **Create .env:**
+   ```bash
+   cp .env.example .env
+   ```
+
+2. **Start the Docker containers:**
    ```bash
    docker-compose up -d
    ```
 
-2. **Run the setup script:**
+3. **Run the setup script:**
    ```bash
    ./setup.sh
    ```
 
-3. **Run the development server:**
+4. **Run the development server:**
    ```bash
    composer run dev
    ```
