@@ -6,7 +6,7 @@ Follow these steps to set up and run the application on Linux:
 
 Make sure you have the following installed:
 - Docker and Docker Compose
-- Node v18.18.0
+- Node.js >= 18.18
 
 ## Setup Instructions
 
