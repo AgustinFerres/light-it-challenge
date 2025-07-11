@@ -34,9 +34,5 @@ print_status "Setting up storage link..."
 php artisan storage:link
 
 print_status "✅ Setup completed successfully!"
-echo
-echo "To start the application, run:"
-echo "  - docker-compose up -d"
-echo "  - composer run dev"
 
 

@@ -26,7 +26,7 @@ Make sure you have the following installed:
 
 4. **Run the setup script:**
    ```bash
-   ./setup.sh
+   ./scripts/setup.sh
    ```
 
 5. **Run the development server:**
